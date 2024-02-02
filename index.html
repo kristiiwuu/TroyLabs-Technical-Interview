@@ -1,13 +1,223 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title></title>
-    <meta>
+    <title>Startup Application Form</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    
     <style>
-        
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        #header {
+            width: auto;
+            height: 250px;
+            background-color: pink;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: none;
+            background-image: url('img/space-header.png');
+            
+        }
+
+        .main {
+            padding: 20px 0;
+        }
+
+        #application-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #000000;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ED3A21;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #ED8F21;
+        }
+
+        #logo img{
+            margin: 15px;
+            width: 50px;
+            height: auto;
+            position: absolute;
+        }
+
+        #text {
+            position: absolute;
+            z-index: 1;
+            top: 100px;
+            left: 230px;
+        }
+        #text > h1 {
+            color: white;
+            margin: 0px 0px 0px 50px;
+        }
+
+        #header #background {
+            width: auto;
+            height: auto;
+
+        }
+
+        .container {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #application-form {
+            width: 700px;
+        }
+
+        #extra-content {
+            margin-left: 300px;
+            display: flex;
+            justify-content: center;
+            flex-flow: column;
+            margin-bottom: 0px;
+        }
+
+        #extra-content .num {
+            font-size: 5em;
+            margin-right: 50px;
+        }
+
+        #stats, #details {
+            display: flex; 
+            flex-flow: row;
+
+        }
+
+        #details {
+            position: absolute;
+            top: 320px;
+            left: 350px;
+        }
+
+        #details .text {
+            font-size: 1em;
+            margin-left: 10px;
+            margin-right: 120px;
+        }
+
     </style>
 </head>
 <body>
+    <div id="header">
+        <div id="logo"> 
+            <img src="img/logo1.jpg" alt="logo">
+        </div>
+        <div id="text">
+            <h1>Your Launchpad to the Startup Space!</h1>
+        </div>
+    </div>
+    <!-- #header -->
+    <div id="extra-content">
+        <div id="stats">
+            <p class="num">
+                <span class='numscroller' data-min='0' data-max='50' data-delay='2' data-increment='1'>0</span>+
+            </p>
+            <p class="num">
+                <span class='numscroller' data-min='0' data-max='100' data-delay='2' data-increment='1'>0</span>+
+            </p>
+            <p class="num">
+                <span class='numscroller' data-min='0' data-max='1000' data-delay='2' data-increment='3'>0</span>+
+            </p>
+        </div>
+        <div id="details">
+            <p class="text">Startups</p>
+            <p class="text">Investors</p>
+            <p class="text">Attendees</p>
+        </div>
+       
+    </div>
+    <div class="container">
+        <div id="application-form">
+            <h2>Get Noticed!</h2>
+            <p>Submit your information and resume to the startup of your dreams</p>
+            <form action="confirmation.html" method="post" enctype="multipart/form-data" action="contact.php">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="resume">Resume (PDF only):</label>
+                <input type="file" id="resume" name="resume" accept=".pdf" required>
+
+                <label for="startup-email">Startup Email:</label>
+                <input type="email" id="startup-email" name="startup-email" required>
+
+                <label for="startups">Select Startups:</label>
+                <select id="startups" name="startups" multiple required>
+                    <option value="" disabled selected></option>
+                    <option value="startup1">Polymer</option>
+                    <option value="startup2">Spotlight Media</option>
+                    <option value="startup3">Outheback</option>
+                    <option value="startup4">Sisu VR</option>
+                    <option value="startup5">Spotlight</option>
+                    <option value="startup6">Rolli</option>
+                    <option value="startup7">Legacy</option>
+                    <option value="startup8">Kenko</option>
+                    <option value="startup9">Asprodental</option>
+                    <option value="startup10">Elete</option>
+                    <option value="startup11">4085 Productions</option>
+                    <option value="startup12">Stellace</option>
+                    <option value="startup13">Scraps</option>
+                    <option value="startup14">Carbonlink</option>
+                    <option value="startup15">Shortcut Robotics</option>
+                    <option value="startup16">Pickle</option>
+
+                </select>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript PlugIns -->
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+     <!-- Roll-Number -->
+     <script src="roll-number/numscroller-1.0.js"></script>
+
+  
 
 </body>
 </html>
